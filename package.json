@@ -1,6 +1,6 @@
 {
   "name": "react-photo-scissor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React photo scissor!",
   "author": "elliottspirit",
   "license": "MIT",
@@ -50,8 +50,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "prop-types": "^15.7.2"
-  }
+  ]
 }
