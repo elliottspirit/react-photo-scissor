@@ -1,10 +1,32 @@
 import React from 'react'
+import image from './629.jpg'
 
-import { ExampleComponent } from 'react-photo-scissor'
+import PhotoScissor from 'react-photo-scissor'
 import 'react-photo-scissor/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const scissorRef = React.createRef()
+
+  function onCrop() {
+    scissorRef.current.crop().then(result => {
+      console.log(result)
+    })
+  }
+
+  return (
+    <div>
+      <PhotoScissor
+        ref={scissorRef}
+        image={image}
+        text="Create React Library Example 😄"
+        viewportWidth={100}
+        viewportHeight={100}
+        boundaryWidth={200}
+        boundaryHeight={200}
+      />
+      <button onClick={onCrop}>Crop</button>
+    </div>
+  )
 }
 
 export default App

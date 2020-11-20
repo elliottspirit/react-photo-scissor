@@ -25,6 +25,17 @@ class Example extends Component {
 }
 ```
 
+### Options
+
+| Name  | Type | Default | Required |
+| ------------- | ------------- | ------------- | ------------- |
+| image          | string  |      | true
+| viewportWidth  | number  | 100  |
+| viewportHeight | number  | 100  |
+| boundaryWidth  | number  | 200  |
+| boundaryHeight | number  | 200  |
+| showSlider     | bool    | true |
+
 ## License
 
 MIT © [elliottspirit](https://github.com/elliottspirit)

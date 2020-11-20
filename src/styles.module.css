@@ -7,3 +7,109 @@
   font-size: 2em;
   text-align: center;
 }
+
+.scissorContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.scissorContainer .scBoundary {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  /*width: 200px;*/
+  /*height: 200px;*/
+}
+
+.scissorContainer .scImage {
+  z-index: -1;
+  position: absolute;
+  max-height: none;
+  max-width: none;
+}
+
+.scissorContainer .scViewport,
+.scissorContainer .scResizer {
+  position: absolute;
+  border: 2px solid #fff;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0 0 2000px 2000px rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.scissorContainer .scViewport {
+  /*width: 100px;*/
+  /*height: 100px;*/
+}
+
+.scissorContainer .scOverlay {
+  z-index: 1;
+  position: absolute;
+  cursor: move;
+  width: 200px;
+  height: 200px;
+}
+
+.scissorContainer .scSliderWrap {
+  width: 75%;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.scSliderWrap .scSlider {
+}
+
+.scissorContainer .scResizer {
+  z-index: 2;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.scissorContainer .scResizerVertical,
+.scissorContainer .scResizerHorizontal {
+  position: absolute;
+  pointer-events: all;
+}
+
+.scissorContainer .scResizerVertical::after,
+.scissorContainer .scResizerHorizontal::after {
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  content: '';
+}
+
+.scissorContainer .scResizerVertical {
+  bottom: -6px;
+  cursor: row-resize;
+  width: 100%;
+  height: 10px;
+}
+
+.scissorContainer .scResizerVertical::after {
+  left: 50%;
+  margin-left: -5px;
+}
+
+.scissorContainer .scResizerHorizontal {
+  right: -6px;
+  cursor: col-resize;
+  width: 10px;
+  height: 100%;
+}
+
+.scissorContainer .scResizerHorizontal::after {
+  top: 50%;
+  margin-top: -5px;
+}
