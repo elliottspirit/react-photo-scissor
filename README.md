@@ -13,15 +13,34 @@ npm install --save react-photo-scissor
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
+import image from './629.jpg'
 
-import MyComponent from 'react-photo-scissor'
+import PhotoScissor from 'react-photo-scissor'
 import 'react-photo-scissor/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
+const App = () => {
+  const scissorRef = React.createRef()
+
+  function onCrop() {
+    scissorRef.current.crop().then(result => {
+      console.log(result)
+    })
   }
+
+  return (
+    <div>
+      <PhotoScissor
+        ref={scissorRef}
+        image={image}
+        viewportWidth={100}
+        viewportHeight={100}
+        boundaryWidth={200}
+        boundaryHeight={200}
+      />
+      <button onClick={onCrop}>Crop</button>
+    </div>
+  )
 }
 ```
 
@@ -35,6 +54,12 @@ class Example extends Component {
 | boundaryWidth  | number  | 200  |
 | boundaryHeight | number  | 200  |
 | showSlider     | bool    | true |
+
+### Methods
+
+###### function crop(type)
+
+Result type default is blob, value can be 'canvas', 'base64', 'blob', 'html'
 
 ## License
 

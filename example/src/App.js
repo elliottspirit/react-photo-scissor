@@ -18,7 +18,6 @@ const App = () => {
       <PhotoScissor
         ref={scissorRef}
         image={image}
-        text="Create React Library Example 😄"
         viewportWidth={100}
         viewportHeight={100}
         boundaryWidth={200}
