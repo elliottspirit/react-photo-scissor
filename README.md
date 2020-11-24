@@ -57,7 +57,7 @@ const App = () => {
 
 ### Methods
 
-###### function crop(type)
+##### function crop(type)
 
 Result type default is blob, value can be 'canvas', 'base64', 'blob', 'html'
 
